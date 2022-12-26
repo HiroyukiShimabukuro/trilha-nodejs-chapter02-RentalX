@@ -2,13 +2,13 @@ import { hash } from "bcryptjs";
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../errors/AppErrors";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
-import { IUserRepository } from "../../repositories/IUsersRepository";
+import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 @injectable()
 class CreateUserUseCase {
   constructor(
     @inject("UsersRepository")
-    private usersRepository: IUserRepository
+    private usersRepository: IUsersRepository
   ) {}
 
   async execute({
